@@ -1,2 +1,26 @@
-<h1>StaticPages#home</h1>
-<p>Find me in app/views/static_pages/home.html.erb</p>
+<div class="container">
+  <div class="jumbotron text-center script home-background">
+    <% if user_signed_in? %>
+      <h1>Welcome back, trusted user!</h1>
+      <p class="lead">
+        You have signed in!  If this were a real app some sweet conent
+        would go here.  But it's just a test.  You might want to sign out now.
+      </p>
+      <%= link_to "Sign Out", destroy_user_session_path, :method => :delete, :class => 'btn btn-large btn-danger' %>
+    <% else %>
+      <h1>Start Inviting!</h1>
+      <p class="lead">
+        Sign in to use our event registry!
+      </p>
+      <div class="row-fluid">
+        <div class="span6">
+          <%= link_to "Sign In", new_user_session_path, :class => "btn btn-success" %>
+        </div>
+        </div>
+        <div class="span6">
+          <%= link_to "Sign Up", new_user_registration_path, :class => "btn btn-success" %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
