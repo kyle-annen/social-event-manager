@@ -1,12 +1,11 @@
 <div class="container">
   <div class="jumbotron text-center script home-background">
     <% if user_signed_in? %>
-      <h1>Welcome back, trusted user!</h1>
+      <h1>Start the Eventocalypse!</h1>
       <p class="lead">
-        You have signed in!  If this were a real app some sweet conent
-        would go here.  But it's just a test.  You might want to sign out now.
+        Let's get started creating events.
       </p>
-      <%= link_to "Sign Out", destroy_user_session_path, :method => :delete, :class => 'btn btn-large btn-danger' %>
+      <%= link_to "Create an Event!", new_event_path , :class => "btn btn-large btn-success" %>
     <% else %>
       <h1>Start Inviting!</h1>
       <p class="lead">

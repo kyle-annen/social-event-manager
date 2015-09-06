@@ -31,3 +31,19 @@
   background-image: url('jumbotron1')
 }
 
+.event-background {
+  background-image: url('concert')
+}
+
+.event-list-tile {
+  border: 1px solid white;
+  border-radius: 3px;
+  webkit-box-shadow: 2px 2px 5px 0px rgba(0,0,0,0.28);
+    -moz-box-shadow: 2px 2px 5px 0px rgba(0,0,0,0.28);
+         box-shadow: 2px 2px 5px 0px rgba(0,0,0,0.28);
+  margin-right: 10px;
+  margin-top: 10px;
+  min-width: 285px;
+}
+
+

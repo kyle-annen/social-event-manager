@@ -1,0 +1,31 @@
+<div class="container">
+  <div class="jumbotron text-center event-background">
+    <h1 class="script">Create an event</h1>
+      <p class="lead ">Fill in the fields to create your event</p>
+      <div class="row">
+        <div class="col-md-6 col-md-offset-3">
+          <%-# start form -%>
+          <%= form_for(:event, url: new_event_path)  do |f| %>
+            <%= f.label :title, "Event Title" %><br>
+            <%= f.text_field :title %><br><br>
+
+            <%= f.label :description, "Event Description" %><br>
+            <%= f.text_field :description  %><br><br>
+
+            <%= f.label :start_date, "Start Date & Time" %><br>
+            <%= f.datetime_select :start_date, :ampm => true, :minute_step => 15 %><br><br>
+
+            <%= f.label :end_date, "End Date & Time" %><br>
+            <%= f.datetime_select :end_date, :ampm => true, :minute_step => 15 %><br><br>
+
+            <%= f.label :max_attendees, "Maximum Number of Attendees" %> 
+            <%= f.number_field :max_attendees, step: 1, min: 0  %><br><br>
+
+
+            <%= f.submit "Create your event", class: "btn btn-primary" %>
+          <% end %>
+          <%-# end fotm -%>
+        </div>
+      </div>
+  </div>
+</div>

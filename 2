@@ -1,0 +1,10 @@
+<div class="container">
+  <%= @events.each do |event| %>
+    <div class="col-md-4">
+      <p><h2><strong><%= event.title %></h2></strong></p>
+      <p><%= event.description %></strong></p>
+      <p>Starting: <%= event.start_date %></strong></p>
+      <p>Ending: <%= event.end_date %></strong></p>
+    </div>
+  <% end %>
+</div>

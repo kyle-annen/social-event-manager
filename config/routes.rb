@@ -1,9 +1,10 @@
 Rails.application.routes.draw do
   root 'static_pages#home'
-
-  get "/about" => "static_pages#about"
-
-  get "/help" => "satic_pages#help"
+  get "/about"        => "static_pages#about"
+  get "/help"         => "satic_pages#help"
+  get "/new_event"    => "event#new"
+  post "/new_event"   => "event#create"
+  get "/events"       => "event#index"
 
   devise_for :users
   # The priority is based upon order of creation: first created -> highest priority.

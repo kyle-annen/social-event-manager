@@ -1,0 +1,26 @@
+<div class="container">
+  <% @events.each do |event| %>
+    <div class="col-md-3 event-list-tile">
+      <p><h2><%= event.title %></h2></p>
+      <p><%= event.description %></p>
+      <p>Date: <%= event.start_date.to_date %></p>
+      <p>Start Time: <%= event.start_date.strftime("%l:%M%P") %></p>
+
+      <% if user_signed_in? %>
+        <p class="navbar-btn">
+          <%= link_to  "Login to Reserve", new_user_session_path, :class => "btn btn-warning"  %>
+        </p> 
+      <% else %>
+        <p class="navbar-btn">
+          <%= link_to  "Login to Reserve", new_user_session_path, :class => "btn btn-warning"  %>
+        </p> 
+      <% end %>
+
+      <span class="pull-right" style="margin-top: 5px;">
+        <strong><%= event.max_attendees %></strong> Spots Open 
+      </span>
+      <p></p>
+
+    </div>
+  <% end %>
+</div>
