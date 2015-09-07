@@ -34,7 +34,7 @@
   <% @events.each do |event| %>
     <% if event.start_date.to_date < Date.today %>
       <div class="col-md-3 event-list-tile">
-        <p><h4><%= event.title %></h4></p>
+        <p><h5><%= event.title %></h5></p>
         <p><%= event.description %></p>
         <p>Date: <%= event.start_date.to_date %></p>
         <p>Start Time: <%= event.start_date.strftime("%l:%M%P") %></p>
