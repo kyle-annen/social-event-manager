@@ -1,11 +1,11 @@
 <div class="container">
-  <div class="jumbotron text-center script home-background">
+  <div class="jumbotron text-center script home-background text-shadow" style="color: white; text-shadow: 3px 3px 6px rgba(150, 150, 150, 1);">
     <% if user_signed_in? %>
       <h1>Start the Eventocalypse!</h1>
       <p class="lead">
         Let's get started creating events.
       </p>
-      <%= link_to "Create an Event!", new_event_path , :class => "btn btn-large btn-success" %>
+      <%= link_to "View Events", events_path , :class => "btn btn-large btn-success title-script" %>
     <% else %>
       <h1>Start Inviting!</h1>
       <p class="lead">
@@ -14,12 +14,11 @@
       <div class="row-fluid">
         <div class="span6">
           <%= link_to "Sign In", new_user_session_path, :class => "btn btn-success" %>
-        </div>
-        </div>
-        <div class="span6">
           <%= link_to "Sign Up", new_user_registration_path, :class => "btn btn-success" %>
         </div>
+        <br> 
       </div>
     <% end %>
   </div>
+  <div style="height: 150px;"></div>
 </div>
