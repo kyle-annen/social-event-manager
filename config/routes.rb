@@ -6,6 +6,8 @@ Rails.application.routes.draw do
   post "/new_event"   => "event#create"
   get "/events"       => "event#index"
 
+  resources :event
+
   devise_for :users
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
