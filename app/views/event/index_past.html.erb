@@ -1,12 +1,12 @@
 <div class="container">
-  <h2 class="script text-shadow pull-left">Upcoming Events - 
-    <%= link_to "View Past Events", past_events_path, :class => "upcoming-past-link" %></h2> 
+  <h2 class="script text-shadow pull-left">Past Events - 
+    <%= link_to "View Upcoming Events", events_path, :class => "upcoming-past-link" %></h2> 
   <div class="pagination-box">
     <%= will_paginate @events, renderer: BootstrapPagination::Rails  %>
   </div>
   <div class="clearfix"></div>
   <% @events.each do |event| %>
-    <% if event.start_date.to_date >= Date.today %>
+    <% if event.start_date.to_date < Date.today %>
       <div class="col-md-3 event-list-tile">
         <p><h4 class="text-shadow"><%= event.title %></h4></p>
         <p><%= event.description %></p>
@@ -14,23 +14,22 @@
         <p>Start Time: <%= event.start_date.strftime("%l:%M%P") %></p>
         <% if user_signed_in? %>
           <p class="navbar-btn pull-left">
-            <%= link_to  "Reserve Spot", new_user_session_path, :class => "btn btn-success"  %>
+            <%= link_to  "Reserve Spot", new_user_session_path, :class => "btn btn-success"  %> 
           </p> 
-        <% else %>
+        <% else %> 
           <p class="navbar-btn pull-left">
             <%= link_to  "Login to Reserve", new_user_session_path, :class => "btn btn-warning"  %>
           </p> 
         <% end %>
+
         <span class="pull-right event-tile-attendees" style="margin-top: 5px;">
-          Spots Open<br> <strong class="tile-attendee-count"><%= number_with_delimiter(event.max_attendees, :delimiter => ',') %></strong> 
+          Spots Open<br> <strong class="tile-attendee-count">
+            <%= number_with_delimiter(event.max_attendees, :delimiter => ',') %></strong> 
         </span>
         <p></p>
       </div> 
     <% end %>
   <% end %>
-  <br>
-  <div>
-  </div>
   <div class="clearfix"></div>
   <div class="pagination-box">
     <%= will_paginate @events, renderer: BootstrapPagination::Rails  %>

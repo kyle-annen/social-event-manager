@@ -5,6 +5,8 @@ Rails.application.routes.draw do
   get "/new_event"    => "event#new"
   post "/new_event"   => "event#create"
   get "/events"       => "event#index"
+  get "/past_events"  => "event#index_past"
+
 
   resources :event
 

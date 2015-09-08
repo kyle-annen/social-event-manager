@@ -1,6 +1,13 @@
 class EventController < ApplicationController
+
+
+  # get_events helper method in event_helper.rb  
   def index
-    @events = Event.paginate(:page => params[:page], :per_page => 9) 
+    @events = Event.where(["start_date >= ?", Date.today]).paginate(:page => params[:page], :per_page => 12) 
+  end
+
+  def index_past
+    @events = Event.where(["start_date < ?", Date.today]).paginate(:page => params[:page], :per_page => 12) 
   end
 
   def show
