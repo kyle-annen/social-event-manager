@@ -14,18 +14,13 @@
         <p>Start Time: <%= event.start_date.strftime("%l:%M%P") %></p>
         <% if user_signed_in? %>
           <p class="navbar-btn pull-left">
-            <%= link_to  "Reserve Spot", new_user_session_path, :class => "btn btn-success"  %> 
+            <%= link_to  "View Past Event", Event.find(event.id), :class => "btn btn-info"  %> 
           </p> 
         <% else %> 
           <p class="navbar-btn pull-left">
             <%= link_to  "Login to Reserve", new_user_session_path, :class => "btn btn-warning"  %>
           </p> 
         <% end %>
-
-        <span class="pull-right event-tile-attendees" style="margin-top: 5px;">
-          Spots Open<br> <strong class="tile-attendee-count">
-            <%= number_with_delimiter(event.max_attendees, :delimiter => ',') %></strong> 
-        </span>
         <p></p>
       </div> 
     <% end %>

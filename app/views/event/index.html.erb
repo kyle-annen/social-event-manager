@@ -14,7 +14,7 @@
         <p>Start Time: <%= event.start_date.strftime("%l:%M%P") %></p>
         <% if user_signed_in? %>
           <p class="navbar-btn pull-left">
-            <%= link_to  "Reserve Spot", new_user_session_path, :class => "btn btn-success"  %>
+            <%= link_to  "Reserve Spot", Event.find(event.id), :class => "btn btn-success"  %>
           </p> 
         <% else %>
           <p class="navbar-btn pull-left">
@@ -29,8 +29,6 @@
     <% end %>
   <% end %>
   <br>
-  <div>
-  </div>
   <div class="clearfix"></div>
   <div class="pagination-box">
     <%= will_paginate @events, renderer: BootstrapPagination::Rails  %>
