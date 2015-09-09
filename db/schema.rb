@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150906164541) do
+ActiveRecord::Schema.define(version: 20150909041541) do
 
   create_table "events", force: :cascade do |t|
     t.string   "title"
@@ -19,9 +19,13 @@ ActiveRecord::Schema.define(version: 20150906164541) do
     t.datetime "start_date"
     t.datetime "end_date"
     t.integer  "max_attendees"
-    t.datetime "created_at",    null: false
-    t.datetime "updated_at",    null: false
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
     t.integer  "user_id"
+    t.string   "event_pic_file_name"
+    t.string   "event_pic_content_type"
+    t.integer  "event_pic_file_size"
+    t.datetime "event_pic_updated_at"
   end
 
   add_index "events", ["user_id"], name: "index_events_on_user_id"

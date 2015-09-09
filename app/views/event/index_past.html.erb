@@ -8,8 +8,9 @@
   <% @events.each do |event| %>
     <% if event.start_date.to_date < Date.today %>
       <div class="col-md-3 event-list-tile">
+        <%= image_tag event.event_pic.url(:medium), :class => "img-responsive" %>
         <p><h4 class="text-shadow"><%= event.title %></h4></p>
-        <p><%= event.description %></p>
+        <p><%= event.description[0..25] %>...</p>
         <p>Date: <%= event.start_date.to_date %></p>
         <p>Start Time: <%= event.start_date.strftime("%l:%M%P") %></p>
         <% if user_signed_in? %>

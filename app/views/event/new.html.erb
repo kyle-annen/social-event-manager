@@ -21,6 +21,8 @@
             <%= f.label :max_attendees, "Maximum Number of Attendees" %> 
             <%= f.number_field :max_attendees, step: 1, min: 0  %><br><br>
 
+            <%= f.label :event_pic, "Event Image - size 1200x400" %>
+            <%= f.file_field :event_pic %>
 
             <%= f.submit "Create your event", class: "btn btn-primary" %>
           <% end %>
