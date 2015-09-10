@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150909041541) do
+ActiveRecord::Schema.define(version: 20150910014219) do
 
   create_table "events", force: :cascade do |t|
     t.string   "title"
@@ -51,5 +51,17 @@ ActiveRecord::Schema.define(version: 20150909041541) do
   add_index "users", ["provider"], name: "index_users_on_provider"
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   add_index "users", ["ui"], name: "index_users_on_ui"
+
+  create_table "zipcodes", force: :cascade do |t|
+    t.integer  "zip"
+    t.string   "city"
+    t.string   "state"
+    t.decimal  "lat",        precision: 9, scale: 6
+    t.decimal  "long",       precision: 9, scale: 6
+    t.integer  "timezone"
+    t.integer  "dst"
+    t.datetime "created_at",                         null: false
+    t.datetime "updated_at",                         null: false
+  end
 
 end

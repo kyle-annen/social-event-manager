@@ -14,7 +14,8 @@ gem 'devise'
 gem 'omniauth-facebook'
 gem 'will_paginate'
 gem 'will_paginate-bootstrap'
-gem "paperclip", "~> 4.3"
+gem 'paperclip', '~> 4.3'
+gem 'smarter_csv'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
