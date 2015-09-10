@@ -18,11 +18,14 @@
             <%= f.label :end_date, "End Date & Time" %><br>
             <%= f.datetime_select :end_date, :ampm => true, :minute_step => 15 %><br><br>
 
-            <%= f.label :max_attendees, "Maximum Number of Attendees" %> 
+            <%= f.label :max_attendees, "Maximum Number of Attendees" %> <br>
             <%= f.number_field :max_attendees, step: 1, min: 0  %><br><br>
 
-            <%= f.label :event_pic, "Event Image - size 1200x400" %>
-            <%= f.file_field :event_pic %>
+            <%= f.label :zipcode, "Event Zipcode" %><br>
+            <%= f.text_field :zipcode %><br><br>
+
+            <%= f.label :event_pic, "Event Image - size 1200x400" %><br>
+            <%= f.file_field :event_pic %><br><br>
 
             <%= f.submit "Create your event", class: "btn btn-primary" %>
           <% end %>

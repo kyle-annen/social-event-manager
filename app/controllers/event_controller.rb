@@ -12,6 +12,7 @@ class EventController < ApplicationController
 
   def show
     @event = Event.find(params[:id])
+    @event_location = Zipcode.find_by(zip: @event.zipcode)
   end
 
   def new
@@ -34,6 +35,6 @@ class EventController < ApplicationController
   private
     def event_params
       params.require(:event).permit(:title, :description, :start_date, 
-                                    :end_date, :max_attendees, :event_pic)
+                                    :end_date, :max_attendees, :event_pic, :zipcode)
 
 end

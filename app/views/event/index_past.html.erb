@@ -23,9 +23,11 @@
           </p> 
         <% end %>
         <p></p>
+        <div class="clearfix"></div>
       </div> 
     <% end %>
   <% end %>
+  <br>
   <div class="clearfix"></div>
   <div class="pagination-box">
     <%= will_paginate @events, renderer: BootstrapPagination::Rails  %>
