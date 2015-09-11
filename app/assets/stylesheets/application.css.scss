@@ -42,8 +42,8 @@
   border: 1px solid white;
   border-radius: 3px;
   webkit-box-shadow: 2px 2px 5px 0px rgba(0,0,0,0.28);
-    -moz-box-shadow: 2px 2px 5px 0px rgba(0,0,0,0.28);
-         box-shadow: 2px 2px 5px 0px rgba(0,0,0,0.28);
+  -moz-box-shadow: 2px 2px 5px 0px rgba(0,0,0,0.28);
+  box-shadow: 2px 2px 5px 0px rgba(0,0,0,0.28);
   margin-right: 10px;
   margin-top: 10px;
   min-width: 285px;
@@ -80,4 +80,16 @@
 .tile-image {
   margin-top: 15px;
 }
+
+.map-container {
+  position:relative;
+  width: 100%;
+  padding-bottom: 40%;
+}
+
+#map {
+  position: absolute;
+  top: 0; bottom: 0; left: 0; right: 0;
+}
+
 

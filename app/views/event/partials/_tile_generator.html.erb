@@ -1,0 +1,43 @@
+<div class="container">
+  <h2 class="script text-shadow pull-left">Upcoming Events - 
+    <%= link_to "View Past Events", past_events_path, :class => "upcoming-past-link" %></h2> 
+  <div class="pagination-box">
+    <p></p>
+    <%= will_paginate @events, renderer: BootstrapPagination::Rails  %>
+  </div>
+  <div class="clearfix"></div>
+  <% @events.each do |event| %>
+    <% if event.start_date.to_date >= Date.today %>
+      <div class="col-md-3 event-list-tile">
+        <%= link_to image_tag(event.event_pic.url(:medium), :class => "img-responsive tile-image"), Event.find(event.id) %>
+        <p><h4 class="text-shadow"><%= event.title %></h4></p>
+        <p>
+          <%= Zipcode.find_by(zip: event.zipcode).city %>, 
+          <%= Zipcode.find_by(zip: event.zipcode).state  %>
+        </p>
+        <p><%= event.description[0..25] %>...</p>
+        <p>Date: <%= event.start_date.to_date %></p>
+        <p>Start Time: <%= event.start_date.strftime("%l:%M%P") %></p>
+        <% if user_signed_in? %>
+          <p class="navbar-btn pull-left">
+            <%= link_to  "Reserve Spot", Event.find(event.id), :class => "btn btn-success"  %>
+          </p> 
+        <% else %>
+          <p class="navbar-btn pull-left">
+            <%= link_to  "Login to Reserve", new_user_session_path, :class => "btn btn-warning"  %>
+          </p> 
+        <% end %>
+        <span class="pull-right event-tile-attendees" style="margin-top: 5px;">
+          Spots Open<br> <strong class="tile-attendee-count"><%= number_with_delimiter(event.max_attendees, :delimiter => ',') %></strong> 
+        </span>
+        <p></p>
+        <div class="clearfix"></div>
+      </div> 
+    <% end %>
+  <% end %>
+  <br>
+  <div class="clearfix"></div>
+  <div class="pagination-box">
+    <%= will_paginate @events, renderer: BootstrapPagination::Rails  %>
+  </div>
+</div>

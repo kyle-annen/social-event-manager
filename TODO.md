@@ -2,7 +2,6 @@
 
 
 To do:
--add zipcode field to event, in model, db, controller and views.
 -default to upcoming events near you using geolocation.  
 -add search box that sets zipcode for events near you
 -add search box for events by string, most like to least like (all results returned)
@@ -13,3 +12,8 @@ To do:
 -add name to user, signup, model, and event creator on event page
 -add ability to tip the event creator
 -add ability to pay for event
+
+
+Finished:
+-add zipcode field to event, in model, db, controller and views.
+
