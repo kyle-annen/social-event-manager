@@ -12,6 +12,7 @@ To do:
 -add name to user, signup, model, and event creator on event page
 -add ability to tip the event creator
 -add ability to pay for event
+-finish this project
 
 
 Finished:
