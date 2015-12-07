@@ -2,7 +2,7 @@
 require 'smarter_csv'
 namespace :import_zipcodes do
   task :create_zipcodes => :environment do
-    filename = './tmp/zipcode.csv'
+    filename = './script/zipcode.csv'
     options = {:chunks => 100, :key_mapping => {:zip => :zip,
                                         :city => :city,
                                         :state => :state,
