@@ -18,6 +18,7 @@ gem 'paperclip', '~> 4.3'
 gem 'smarter_csv'
 gem 'gmaps4rails' 
 gem 'underscore-rails'
+gem 'pg'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
