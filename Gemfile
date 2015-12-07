@@ -19,6 +19,7 @@ gem 'smarter_csv'
 gem 'gmaps4rails' 
 gem 'underscore-rails'
 gem 'pg'
+gem 'RMagick'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
