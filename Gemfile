@@ -20,6 +20,7 @@ gem 'gmaps4rails'
 gem 'underscore-rails'
 gem 'pg'
 gem 'rmagick'
+gem 'aws-sdk'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
