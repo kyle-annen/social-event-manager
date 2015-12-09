@@ -2,6 +2,7 @@
 
 
 To do:
+-fix image show issue from s3>heroku, not currently funcitoning, showing image name. 
 -default to upcoming events near you using geolocation.  
 -add search box that sets zipcode for events near you
 -add search box for events by string, most like to least like (all results returned)
