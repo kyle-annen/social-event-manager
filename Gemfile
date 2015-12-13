@@ -18,7 +18,9 @@ gem 'paperclip', '~> 4.3'
 gem 'smarter_csv'
 gem 'gmaps4rails' 
 gem 'underscore-rails'
-
+gem 'pg' 
+gem 'rmagick'
+gem 'aws-sdk', '< 2.0'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
@@ -35,6 +37,5 @@ group :development, :test do
 end
 
 group :production do
-  #gem 'pg'
   gem 'rails_12factor'
 end

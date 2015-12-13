@@ -5,7 +5,7 @@ class EventController < ApplicationController
   def index
     #  @events = Event.where(["start_date >= ?", Date.today]).paginate(
     #    :page => params[:page], :per_page => 12) 
-    @events = Event.joins("LEFT JOIN `zipcodes` ON events.zipcode = zipcodes.zip").select("events.*, zipcodes.lat, zipcodes.long, zipcodes.city, zipcodes.state").where(["start_date >= ?", Date.today]).paginate(:page => params[:page], :per_page => 12) 
+    @events = Event.joins("LEFT JOIN zipcodes ON events.zipcode = zipcodes.zip").select("events.*, zipcodes.lat, zipcodes.long, zipcodes.city, zipcodes.state").where(["start_date >= ?", Date.today]).paginate(:page => params[:page], :per_page => 12) 
     @hash = Gmaps4rails.build_markers(@events) do |event, marker|
       marker.lat event.lat
       marker.lng event.long
